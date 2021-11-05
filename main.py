@@ -8,18 +8,18 @@ from common import config
 logger = logging.getLogger(__name__)
 
 def _news_scraper(news_site_uid):
-    host = config() ['news_sites'] [news_site_uid] ['url']
+    host = config()['news_sites'][news_site_uid]['url']
 
     logging.info(f'Beginning scrape for {host}')
-    homePage = news.HomePage(news_site_uid, host)
+    homepage = news.HomePage(news_site_uid, host)
 
-    for link in homePage.article_links:
+    for link in homepage.article_links:
         print(link)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()    
 
-    news_sites_choices = list(config() ['news_sites'] .keys())
+    news_sites_choices = list(config()['news_sites'].keys())
     parser.add_argument('news_site',
                         help='The news site that you want to scrape',
                         type=str,
