@@ -1,5 +1,5 @@
 news_sites:
-  eluniversal:
+  xataka:
     url: http://www.xataka.com.mx
     queries: 
       homepage_article_links: '.base-asset-image a'
